@@ -3,28 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Proiektua/styles_proiektua/form.css">
+    <link rel="stylesheet" href="/Proiektua/styles_proiektua/persolnalizer.css">
     <title>Document</title>
 </head>
 <body>
-    <header class="headerMain">
-        <div class="headerMain-title">
-            <h3>Welcome to CSS Learning Hub</h3>
-        </div>
-        <div class="interiorcounterFlex">
-            <div class="live-counter-pulse"></div>
-            <div class="live-counter-num">64</div> 
-            <div class="live-counter-text">Online</div>
-        </div>
-    </header>
-   
-   
-   
     <nav>
         <ul>
-            <li><a href="*********************">Personalizer</a></li>
-            <li><a href="********************">Form</a></li>
-            <li><a href="********************">Images</a></li>
+            <li class="nav-container">
+                <a href="*********************">Personalizer</a>
+                <div class="dropdown">
+                    <div class="color-text"> Bg_color </div>
+                    <div class="color-option" style="background: rgb(255, 165, 202);" onclick=function3()></div> 
+                    <div class="color-option" style="background: rgb(138, 228, 138);" onclick=function4()></div>
+                    <div class="color-option" style="background: rgb(133, 206, 248);" onclick="changeBackground('blue')"></div>
+                    <div class="color-option" style="background: rgb(255, 255, 149);" onclick="changeBackground('yellow')"></div>
+                    <div class="color-option" style="background: rgb(205, 152, 255);" onclick="changeBackground('purple')"></div>
+                </div>
+            
+            </li>
+            <li><a href="/Proiektua/proiektua_form.html">Form</a></li>
+            <li><a href="/Proiektua/proiektua_images.html">Images</a></li>
         </ul>
     </nav>
    
@@ -35,6 +33,27 @@
 
     <h4>Click to Personalizer banner</h4>
    
- 
+    <script>
+        function changeBackground(color) {
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+    
+    <script>
+        function function3(){
+            document.body.style.backgroundColor = "pink";
+    }
+    </script>
+    <script>
+        function function4(){
+            document.body.style.backgroundColor = "PaleGreen";
+    }
+    </script>
+    <script>
+        function function5(){
+            document.body.style.backgroundColor = "PaleTurquoise";
+    }
+    </script>
 </body>
 </html>
+
