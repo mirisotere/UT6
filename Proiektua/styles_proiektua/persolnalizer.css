@@ -36,6 +36,12 @@ nav{
     }
 }
 
+
+#letra{
+    text-align: center;
+    font-size: medium;
+}
+
 /*menu personalizer*/
 .color-text {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
