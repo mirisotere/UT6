@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Proiektua/styles_proiektua/persolnalizer.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="nav-container">
+                <a href="*********************">Personalizer</a>
+                <div class="dropdown">
+                    <div class="color-text"> Bg_color </div>
+                    <button class="color-option" style="background: pink;" onclick="function1('pink')"></button> 
+                    <button class="color-option" style="background: LightSalmon;" onclick="function1('LightSalmon')"></button>
+                    <button class="color-option" style="background: LemonChiffon;" onclick="function1('LemonChiffon')"></button>
+                    <button class="color-option" style="background: PaleGreen;" onclick="function1('PaleGreen')"></button>
+                    <button class="color-option" style="background: PaleTurquoise;" onclick="function1('PaleTurquoise')"></button>
+                    <button class="color-option" style="background: Plum;" onclick="function1('Plum')"></button>
+                    
+                    <div class="color-text"> Change_letters </div>
+                    <div class="color-option" style="background: black;" onclick="function1('black')"></div>
+                    <div class="color-option" style="background: white;" onclick="function1('white')"></div>
+                    <div class="color-option" style="background: DarkSlateBlue;" onclick="function1('DarkSlateBlue')"></div>
+                    <div id="letra" class="color-option" style="background: rgb(231, 231, 231);" onclick="function1('small')">XS</div>
+                    <div id="letra" class="color-option" style="background: rgb(231, 231, 231);" onclick="function1('medium')">S</div>
+                    <div id="letra" class="color-option" style="background: rgb(231, 231, 231);" onclick="function1('large')">M</div>
+                    <div id="letra" class="color-option" style="background: rgb(231, 231, 231);" onclick="function1('arial')">A</div>
+                    <div id="letra" class="color-option" style="background: rgb(231, 231, 231);" onclick="function1('courier')">C</div>
+                    <div id="letra" class="color-option" style="background: rgb(231, 231, 231);" onclick="function1('times')">T</div>
+                </div>
+            
+            </li>
+            <li><a href="/Proiektua/proiektua_form.html">Form</a></li>
+            <li><a href="/Proiektua/proiektua_images.html">Images</a></li>
+        </ul>
+    </nav>
+   
+    <div id="esaldiak">
+        <h1>Welcome to Personalizer </h1>
+        <h4>This is a paragraph that you can adapt its content</h4>
+        <h4>Click to Personalizer banner</h4>
+    </div>
+   
+    <script>
+        function function1(color) {
+            switch(color) {
+                case 'pink':
+                    document.body.style.backgroundColor = "pink";
+                    break;
+                case 'PaleGreen':
+                    document.body.style.backgroundColor = "PaleGreen";
+                    break;
+                case 'PaleTurquoise':
+                    document.body.style.backgroundColor = "PaleTurquoise";
+                    break;
+                case 'LemonChiffon':
+                    document.body.style.backgroundColor = "LemonChiffon";
+                    break;
+                case 'Plum':
+                    document.body.style.backgroundColor = "Plum";
+                    break;
+                case 'LightSalmon':
+                    document.body.style.backgroundColor = "LightSalmon";
+                    break;
+                case'DarkSlateBlue':
+                    document.getElementById("esaldiak").style.color = "DarkSlateBlue";
+                    break;
+                case'black':
+                    document.getElementById("esaldiak").style.color = "black";
+                    break;
+                case'white':
+                    document.getElementById("esaldiak").style.color = "white";
+                    break;
+                case 'small':
+                    document.getElementById("esaldiak").style.fontSize = "small"
+                    break;
+                case 'medium':
+                    document.getElementById("esaldiak").style.fontSize = "medium"
+                    break;
+                case 'large':
+                    document.getElementById("esaldiak").style.fontSize = "large"
+                    break;
+                case 'arial':
+                    document.getElementById("esaldiak").style.fontFamily = "arial"
+                    break;
+                case 'courier':
+                    document.getElementById("esaldiak").style.fontFamily = "courier"
+                    break;
+                case 'times':
+                    document.getElementById("esaldiak").style.fontFamily = "times"
+                    break;
+                }
+        }
+  
+
+
+</script>
+
+</body>
+</html>
+

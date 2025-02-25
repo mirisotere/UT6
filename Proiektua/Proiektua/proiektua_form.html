@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Proiektua/styles_proiektua/form.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="headerMain">
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/Proiektua/proiektua_personalizer.html">Personalizer</a></li>
+            <li><a href="/Proiektua/proiektua_form.html">Form</a></li>
+            <li><a href="/Proiektua/proiektua_images.html">Images</a></li>
+            <li><a href="*************************">Mode</a></li>
+        </ul>
+    </nav>
+    <div class="form-container">
+        <form method="post">
+          <div class="form-row">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name">
+          </div>
+    
+          <div class="form-row">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" placeholder="Enter your email">
+          </div>
+
+          <div class="form-row">
+            <button id="submit" onclick="function2()">Validate</button>
+          </div>
+    
+    
+          <div class="form-row">
+            <label>Gender:</label>
+            <div class="form-group">
+              <input type="radio" id="male" name="gender" value="male">
+              <label for="male">Male</label>
+    
+              <input type="radio" id="female" name="gender" value="female">
+              <label for="female">Female</label>
+    
+              <input type="radio" id="other" name="gender" value="other">
+              <label for="other">Other</label>
+            </div>
+          </div>
+    
+          <div class="form-row">
+            <label for="country">Country:</label>
+            <select id="country" name="country">
+              <option value="">Select your country</option>
+              <option value="us">Euskal Herria</option>
+              <option value="uk">France</option>
+              <option value="canada">Spain</option>
+              <option value="australia">Italy</option>
+            </select>
+          </div>
+    
+          <div class="form-row">
+            <button type="submit" class="submit-btn">Register</button>
+          </div>
+
+
+        </form>
+    </div>
+
+ <script>    
+     
+     function function2(){
+      event.preventDefault();
+
+      let y = document.getElementById("submit").textContent ;
+
+      if (!/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.(es|com)$/.test(y)){
+        let x = document.createElement("container");
+        
+        x.textContent = y+"is not correct, please retry :(";
+        x.style.color = "red";
+        
+      }
+      }     
+      
+    </script>
+
+</body>
+</html>

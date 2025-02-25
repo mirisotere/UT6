@@ -1,0 +1,29 @@
+
+/*--navigation bar--*/
+
+nav{
+    ul{
+      display: flex;
+      justify-content: center;
+      margin-top: 70px;
+      margin:auto;
+      padding: 0;
+      background-color: #4e4e4e;
+    }
+
+    li{
+
+      list-style-type: none;
+    }
+    
+    li a{
+      color: #fff;
+
+      margin: 5px;
+      margin-left: 10px;
+      margin-right: 10px;
+
+    text-decoration: none;
+    display: block;
+    }
+}
