@@ -45,6 +45,11 @@ nav{
 /*menu personalizer*/
 .color-text {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #333; 
 }
 
 /* Estilos del menú */
@@ -63,16 +68,38 @@ nav{
     padding: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 100;
+    width: 200px;
 }
 
-.dropdown .color-option {
+.dropdown {
+    .color-option{
     width: 20px;
     height: 20px;
     display: inline-block;
     margin: 5px;
     cursor: pointer;
     border: 1px solid black;
+    transition: transform 0.2s ease;
+    }
+    #letra {
+        background-color: #d4d4d4;
+        width: 20px; 
+        height: 20px;
+        display: inline-block;
+        margin: 5px;
+        cursor: pointer;
+        border: 1px solid #ccc; 
+        text-align: center;
+        line-height: 20px; 
+        font-size: 12px;
+        transition: transform 0.2s ease;
+    }
 }
+.dropdown .color-option:hover,
+.dropdown #letra:hover {
+    transform: scale(1.1);
+}
+
 
 /* Mostrar menú al pasar el mouse */
 .nav-container:hover .dropdown {
