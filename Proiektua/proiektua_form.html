@@ -31,6 +31,7 @@
 
           <div class="form-row">
             <button id="submit" onclick="function2()">Validate</button>
+            <div id="container_email"> </div>
           </div>
     
     
@@ -50,16 +51,41 @@
     
           <div class="form-row">
             <label for="country">Country:</label>
-            <select id="country" name="country">
-              <option value="">Select your country</option>
-              <option value="us">Euskal Herria</option>
-              <option value="uk">France</option>
-              <option value="canada">Spain</option>
-              <option value="australia">Italy</option>
-            </select>
+              <select id="country" name="country">
+                <option value="">Select your country</option>
+                <option value="euskalherria" onclick="Province()">Euskal Herria</option>
+                <option value="france">France</option>
+                <option value="spain">Spain</option>
+                <option value="italy">Italy</option>
+              </select>
           </div>
-    
-          <div class="form-row">
+          
+          <div class="form-row" id="euskalherria" style="display:none;">
+            <label for="province">Province:</label>
+              <select name="province" id="province">
+                <option value="Araba">Araba</option>
+                <option value="Bizkaia">Bizkaia</option>
+                <option value="Gipuzkoa">Gipuzkoa</option>
+                <option value="Nafarroa" onclick="Town()">Nafarroa</option>
+                <option value="Lapurdi">Lapurdi</option>
+                <option value="Nafarroa Behera">Nafarroa Behera</option>
+                <option value="Zuberoa">Zuberoa</option>
+              </select>
+          </div>
+            
+          <div class="form-row" id="euskalherria" style="display:none;">
+            <label for="town">Town:</label>
+              <select name="town" id="town">
+                <option value="Iruña">Iruña</option>
+                <option value="Tutera">Tutera</option>
+                <option value="Tafalla">Tafalla</option>
+                <option value="Leitza">Leitza</option>
+                <option value="Lizarra">Lizarra</option>
+              </select>
+          </div>
+          
+          
+            <div class="form-row">
             <button type="submit" class="submit-btn">Register</button>
           </div>
 
@@ -72,36 +98,36 @@
      function function2(){
       event.preventDefault();
 
-      let y = document.getElementById("submit").textContent ;
+      let y = document.getElementById("email").value ;
 
       if (!/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.(es|com)$/.test(y)){
-        let x = document.createElement("container");
         
-        x.textContent = y+"is not correct, please retry :(";
-        x.style.color = "red";
-        
+        document.getElementById("container_email").style.color = "red";
+        document.getElementById("container_email").innerHTML = y + " is not correct, please retry :(";
+  
+      }
+      
+      else{
+        document.getElementById("container_email").style.color = "green";
+        document.getElementById("container_email").innerHTML = y + " is valid :)";
+  
       }
       }     
       
     </script>
 
+<script> 
+  function Province(){
+    document.getElementById("euskalherria").show();
+
+  }
+</script>
+
+display: contents;
+
+
+
+
+
 </body>
 </html>
-
-<!--        <script>
-            function email() {
-                const emailField = document.getElementById('email');
-                const emailMessage = document.getElementById('emailMezua')
-                const email = emailField.value;
-            
-            if (email.incuides('@')){
-                email.emailMessage.textcontent = `"${email}" erabilgarri da.`;
-                emailMessage.className = 'succes';
-                emailMessage.stylecolor = 'green';
-            }else {
-                email.emailMessage.textcontent = `"${email}" ez da erabilgarri.`;
-                emailMessage.className = 'error';
-                emailMessage.stylecolor = 'red';
-            }
-        }
-        </script>-->
