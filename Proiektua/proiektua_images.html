@@ -3,18 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/styles_proiektua/images.css">
+    <style>
+        .dark-mode {
+            background-color: black;
+            color: white;
+        }
+        .dark-mode .form-container1 ,.dark-mode .form-container2{
+            background-color: rgb(59, 59, 59);
+            color: white;
+        }
+    </style>
+    <title>Images</title>
 </head>
-<body>
-</header>
-<nav>
-    <ul>
-        <li><a href="/Proiektua/proiektua_personalizer.html">Personalizer</a></li>
-        <li><a href="/Proiektua/proiektua_form.html">Form</a></li>
-        <li><a href="/Proiektua/proiektua_images.html">Images</a></li>
-        <li><a href="**************">Mode</a></li>
-    </ul>
-</nav>
+
+<body id="form_body" onload="loop()">
+    <header class="headerMain">
+        <nav>
+            <ul>
+                <li><a href="/proiektua_personalizer.html">Personalizer</a></li>
+                <li><a href="/proiektua_form.html">Form</a></li>
+                <li><a href="/proiektua_images.html">Images</a></li>
+                <li><a href="#" id="mode" onclick="dark_mode()">Mode</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+<div class="form-container1">     
+    <h3>Magic Button: Create & Change Image</h3>
+    <p><img id="change"></p>
+    <button id="change_button" type="button" onclick="change_image()">Change Image!</button>   
+</div>
+
+
+
+<div class="form-container2">     
+    <h3>AutoLoading</h3>
+    <p><img id="random" alt="random image"></p>
+</div>
+
+
+<script>
+    function dark_mode() {
+        document.body.classList.toggle('dark-mode');
+        if(document.body.className == "dark-mode"){
+            document.getElementById("mode").innerHTML = "Dark"
+
+        }
+        else{
+            document.getElementById("mode").innerHTML = "Light"
+        }
+          }
+</script>
+
+
+
+
+<script>
+    function zenbakia(n){
+        return(Math.floor(Math.random() * n + 1 ));
+    }
+</script>
+
+<script>
+    var change_images = new Array();
+    change_images[0] = "/images/css_logo.png";
+    change_images[1] = "/images/html_logo.png";
+    change_images[2] = "/images/js_logo.png";
+    change_images[3] = "/images/all.png";
+    change_images[4] = "/images/js_gif.gif";
+</script>
+
+<script>
+    function loop() {
+        document.getElementById("random").src = change_images[zenbakia(5)-1];
+        setTimeout(loop, 300);
+    }
+</script>
+
+<script>
+    function change_image(){
+        document.getElementById("change").src = change_images[zenbakia(5)-1];
+    }
+</script>
 
 </body>
 </html>
+
+

@@ -9,12 +9,10 @@ body{
  
 .form-container{
   display: flex;
-
   width: 80%;
   margin: auto;
   max-width: 400px;
   padding: 20px;
-
   border: hidden;
   border-radius: 10px;
 
@@ -30,16 +28,19 @@ body{
 .form-row{
   display: flex;
   flex-direction: column;
-
   align-self: stretch;
-
   margin-bottom: 15px;
+ 
 }
 
 .form-row label{
   margin-bottom: 5px;
 }
 
+.form-row a{ 
+  text-decoration: none;
+  color: black;
+}
 
 
 

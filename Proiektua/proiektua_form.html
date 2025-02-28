@@ -3,20 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Proiektua/styles_proiektua/form.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="/styles_proiektua/form.css">
+    <title>Form</title>
+    <style>
+      .dark-mode {
+          background-color: black;
+          color: white;
+      }
+      .dark-mode .form-container{
+          background-color: rgb(59, 59, 59);
+          color: white;
+      }
+  </style>
 </head>
-<body>
+<body id="form_body">
     <header class="headerMain">
-    </header>
-    <nav>
+      <nav>
         <ul>
-            <li><a href="/Proiektua/proiektua_personalizer.html">Personalizer</a></li>
-            <li><a href="/Proiektua/proiektua_form.html">Form</a></li>
-            <li><a href="/Proiektua/proiektua_images.html">Images</a></li>
-            <li><a href="*************************">Mode</a></li>
+            <li><a href="/proiektua_personalizer.html">Personalizer</a></li>
+            <li><a href="/proiektua_form.html">Form</a></li>
+            <li><a href="/proiektua_images.html">Images</a></li>
+            <li><a href="#" id="mode" onclick="dark_mode()">Mode</a></li>
         </ul>
     </nav>
+    </header>
+    
     <div class="form-container">
         <form method="post">
           <div class="form-row">
@@ -51,43 +62,100 @@
     
           <div class="form-row">
             <label for="country">Country:</label>
-              <select id="country" name="country">
+              <select id="country" name="country" onchange="Province()">
                 <option value="">Select your country</option>
-                <option value="euskalherria" onclick="Province()">Euskal Herria</option>
+                <option value="euskalherria">Euskal Herria</option>
                 <option value="france">France</option>
                 <option value="spain">Spain</option>
                 <option value="italy">Italy</option>
               </select>
           </div>
-          
-          <div class="form-row" id="euskalherria" style="display:none;">
+  <!--euskal herria-->
+          <div class="form-row" id="euskalherria_province" style="display:none;">
             <label for="province">Province:</label>
-              <select name="province" id="province">
+              <select name="province" id="province" onchange="Town()">
                 <option value="Araba">Araba</option>
                 <option value="Bizkaia">Bizkaia</option>
                 <option value="Gipuzkoa">Gipuzkoa</option>
-                <option value="Nafarroa" onclick="Town()">Nafarroa</option>
+                <option value="Nafarroa">NAFARROA</option>
                 <option value="Lapurdi">Lapurdi</option>
-                <option value="Nafarroa Behera">Nafarroa Behera</option>
+                <option value="Nafarroa_Behera">Nafarroa Behera</option>
                 <option value="Zuberoa">Zuberoa</option>
               </select>
           </div>
             
-          <div class="form-row" id="euskalherria" style="display:none;">
+          <div class="form-row" id="nafarroa_town" style="display:none;">
             <label for="town">Town:</label>
               <select name="town" id="town">
                 <option value="Iruña">Iruña</option>
                 <option value="Tutera">Tutera</option>
                 <option value="Tafalla">Tafalla</option>
-                <option value="Leitza">Leitza</option>
-                <option value="Lizarra">Lizarra</option>
               </select>
           </div>
-          
-          
-            <div class="form-row">
-            <button type="submit" class="submit-btn">Register</button>
+          <div class="form-row" id="araba_town" style="display:none;">
+            <label for="town">Town:</label>
+              <select name="town" id="town">
+                <option value="gasteiz">Gasteiz</option>
+              </select>
           </div>
+          <div class="form-row" id="gipuzkoa_town" style="display:none;">
+            <label for="town">Town:</label>
+              <select name="town" id="town">
+                <option value="donosti">Donosti</option>
+                <option value="beasain">Beasain</option>
+                <option value="tolosa">Tolosa</option>
+              </select>
+          </div>
+          <div class="form-row" id="bizkaia_town" style="display:none;">
+            <label for="town">Town:</label>
+              <select name="town" id="town">
+                <option value="bilbo">Bilbo</option>
+              </select>
+          </div>
+          <div class="form-row" id="zuberoa_town" style="display:none;">
+            <label for="town">Town:</label>
+              <select name="town" id="town">
+                <option value="maule_lextarre">Maule Lextarre</option>
+              </select>
+          </div>
+          <div class="form-row" id="nafarroa_behera_town" style="display:none;">
+            <label for="town">Town:</label>
+              <select name="town" id="town">
+                <option value="donibane_garazi">Donibane Garazi</option>
+              </select>
+          </div>
+          <div class="form-row" id="lapurdi_town" style="display:none;">
+            <label for="town">Town:</label>
+              <select name="town" id="town">
+                <option value="baiona">Baiona</option>
+              </select>
+          </div>
+  <!--spain-->
+        <div class="form-row" id="spain_province" style="display:none;">
+          <label for="province">Province:</label>
+            <select name="province" id="province" onchange="Town()">
+              <option value="Andalucia">ANDALUCIA</option>
+              <option value="Castilla">Castilla y León</option>
+              <option value="Extremadura">Extremadura</option>
+              <option value="Madrid">Madrid</option>
+            </select>
+        </div>
+          
+        <div class="form-row" id="spain_town" style="display:none;">
+          <label for="town">Town:</label>
+            <select name="town" id="town">
+              <option value="Sevilla">Sevilla</option>
+              <option value="Malaga">Malaga</option>
+              <option value="Huelva">Huelva</option>
+            </select>
+        </div>
+        
+        
+    <div class="form-row">
+    <button type="button" class="submit-btn" >
+        <a href="/proiektua_personalizer.html">Send</a>
+    </button>
+</div>
 
 
         </form>
@@ -116,16 +184,72 @@
       
     </script>
 
-<script> 
-  function Province(){
-    document.getElementById("euskalherria").show();
+<script>
+  function Province() {
+      
+    document.getElementById("euskalherria_province").style.display = "none";
+    document.getElementById("spain_province").style.display = "none";
 
+      let country = document.getElementById("country").value;
+
+
+      if (country === "euskalherria") {
+        document.getElementById("euskalherria_province").style.display = "block"; 
+      } else if (herrialdea.value === "spain") {
+        document.getElementById("spain_province").style.display = "block"; 
+      } else {
+          herrialdea.style.display = "none"; 
+      }
+  }
+
+  function Town() {
+
+    document.getElementById("nafarroa_town").style.display = "none";
+    document.getElementById("bizkaia_town").style.display = "none";
+    document.getElementById("gipuzkoa_town").style.display = "none";
+    document.getElementById("zuberoa_town").style.display = "none";
+    document.getElementById("lapurdi_town").style.display = "none";
+    document.getElementById("nafarroa_behera_town").style.display = "none";
+    document.getElementById("araba_town").style.display = "none";
+    
+      let herria = document.getElementById("province").value;
+
+      if (herria === "Nafarroa") {
+        document.getElementById("nafarroa_town").style.display = "block"; 
+      } else if (herria === "Bizkaia") {
+        document.getElementById("bizkaia_town").style.display = "block"; 
+      } else if (herria === "Gipuzkoa") {
+        document.getElementById("gipuzkoa_town").style.display = "block"; 
+      }else if (herria === "Zuberoa") {
+        document.getElementById("zuberoa_town").style.display = "block"; 
+      }else if (herria === "Lapurdi") {
+        document.getElementById("lapurdi_town").style.display = "block"; 
+      }else if (herria === "Nafarroa_Behera") {
+        document.getElementById("nafarroa_behera_town").style.display = "block"; 
+      }else if (herria === "Araba") {
+        document.getElementById("araba_town").style.display = "block"; 
+      }
+      else {
+          herria.style.display = "none"; 
+      }
   }
 </script>
 
-display: contents;
 
 
+<script>
+  function dark_mode() {
+            document.body.classList.toggle('dark-mode');
+            if(document.body.className == "dark-mode"){
+            document.getElementById("mode").innerHTML = "Dark";
+        
+
+        }
+        else{
+            document.getElementById("mode").innerHTML = "Light";
+        }
+          }
+</script>
 
 
 
